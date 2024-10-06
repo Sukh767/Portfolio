@@ -12,7 +12,6 @@ import { ReactTyped, Typed } from "react-typed";
 import profile from "../assets/profile2.jpg";
 
 const Home = () => {
-
   return (
     <>
       <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-20">
@@ -22,7 +21,8 @@ const Home = () => {
             <div className="flex space-x-l text-2xl md:text-4xl">
               <h1>Hello, I'm </h1>
               {/* <span className="text-red-600 font-bold">Developer</span> */}
-              <ReactTyped className="text-red-600 font-bold"
+              <ReactTyped
+                className="text-red-600 font-bold"
                 strings={[" Developer", " Programmer", " Coder"]}
                 typeSpeed={40}
                 backSpeed={50}
@@ -43,24 +43,34 @@ const Home = () => {
                 <h1 className="font-bold text-center">Available on</h1>
                 <ul className="flex space-x-5">
                   <li>
-                    {" "}
-                    <PiInstagramLogoFill className="text-3xl cursor-pointer" />
+                    <a
+                      href="https://www.instagram.com/sukh_jana/"
+                      target="_blank"
+                    >
+                      <PiInstagramLogoFill className="text-3xl cursor-pointer" />
+                    </a>
                   </li>
                   <li>
-                    {" "}
-                    <FaLinkedin className="text-3xl cursor-pointer" />
+                    <a
+                      href="https://www.linkedin.com/in/sukharanjan-jana-402b42255"
+                      target="_blank"
+                    >
+                      <FaLinkedin className="text-3xl cursor-pointer" />
+                    </a>
                   </li>
                   <li>
-                    {" "}
-                    <FaGithub className="text-3xl cursor-pointer" />
+                    <a href="https://github.com/Sukh767" target="_blank">
+                      <FaGithub className="text-3xl cursor-pointer" />
+                    </a>
                   </li>
-                  <li>
-                    {" "}
+                  {/* <li>
+                    <a href="https://www.instagram.com/sukh_jana/" target="_blank">
                     <FaDiscord className="text-3xl cursor-pointer" />
-                  </li>
+                  </li> */}
                   <li>
-                    {" "}
-                    <FaTelegram className="text-3xl cursor-pointer" />
+                    <a href="http://t.me/" target="_blank">
+                      <FaTelegram className="text-3xl cursor-pointer" />
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -77,13 +87,15 @@ const Home = () => {
             </div>
           </div>
           <div className="md:w-1/2 md:ml-48 order-1">
-          <img 
-          src={profile} 
-          alt="" className="rounded-full w-full md:w-[450px] md:h-[450px]"/>
+            <img
+              src={profile}
+              alt=""
+              className="rounded-full w-full md:w-[450px] md:h-[450px]"
+            />
           </div>
         </div>
       </div>
-      <hr className="border-1"/>
+      <hr className="border-1" />
     </>
   );
 };
