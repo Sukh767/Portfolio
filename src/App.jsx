@@ -1,18 +1,25 @@
 import Navbar from "./component/Navbar"
 import Home from "./component/Home"
 import About from "./component/About"
-import Projects from "./component/Projects"
 import Experience from "./component/Experience"
-import footer from "./component/footer"
+import Footer from "./component/Footer"
+import Contact from "./component/Contact"
+import PortFolio from "./component/PortFolio"
+import { Toaster } from 'react-hot-toast';
+
 const App = () => {
   return (
     <>
+    <div>
     <Navbar/>
     <Home/>
     <About/>
-    <Projects/>
+    <PortFolio/>
     <Experience/>
-
+    <Contact/>
+    <Footer/>
+    </div>
+    <Toaster />
     </>
   )
 }

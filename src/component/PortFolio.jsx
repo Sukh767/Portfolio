@@ -6,7 +6,7 @@ import express from "../assets/express.png";
 import reactjs from "../assets/reactjs.png";
 import nodejs from "../assets/node.png";
 
-const Projects = () => {
+const PortFolio = () => {
     const cardItem = [
         {
           id: 1,
@@ -41,7 +41,7 @@ const Projects = () => {
       ];
   return (
     <div
-      name="Portfolio"
+      name="PortFolio"
       className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-10"
     >
       <div>
@@ -80,4 +80,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default PortFolio
