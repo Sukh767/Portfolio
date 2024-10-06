@@ -42,7 +42,7 @@ const PortFolio = () => {
   return (
     <div
       name="PortFolio"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-10"
+      className="mx-auto px-4 md:px-20 mt-10"
     >
       <div>
         <h1 className="text-3xl font-bold mb-5">PortFolio</h1>
@@ -65,9 +65,6 @@ const PortFolio = () => {
                 </p>
               </div>
               <div className=" px-6 py-4 space-x-3 justify-around">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded">
-                  Video
-                </button>
                 <button className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded">
                   Source code
                 </button>

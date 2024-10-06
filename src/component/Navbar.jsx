@@ -3,76 +3,60 @@ import profile from "../assets/profile2.jpg";
 import { IoMenu } from "react-icons/io5";
 import { ImCross } from "react-icons/im";
 import { Link } from "react-scroll";
+import { UilEstate, UilUser, UilImage, UilMessage, UilFileAlt } from '@iconscout/react-unicons';
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const navItems = [
-    {
-      id: 1,
-      text: "Home",
-    },
-    {
-      id: 2,
-      text: "About",
-    },
-    {
-      id: 3,
-      text: "PortFolio",
-    },
-    {
-      id: 4,
-      text: "Experience",
-    },
-    {
-      id: 5,
-      text: "Contacts",
-    },
+    { id: 1, text: "Home", icon: <UilEstate size={24} /> },
+    { id: 2, text: "About", icon: <UilUser size={24} /> },
+    { id: 3, text: "Portfolio", icon: <UilImage size={24} /> },
+    { id: 4, text: "Skills", icon: <UilFileAlt size={24} /> },
+    { id: 5, text: "Contacts", icon: <UilMessage size={24} /> },
   ];
 
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 shadow-md h-16 fixed top-0 left-0 right-0 z-50 bg-white">
+      <div className="mx-auto px-4 md:px-20 shadow-md h-16 fixed top-0 left-0 right-0 z-50 bg-white">
         <div className="flex justify-between items-center h-16">
           <div className="flex space-x-2">
-            <img className="h-12 w-12 rounded-full" src={profile} alt="" />
-            <h1 className="font-semibold text-xl cursor pointer ">
-              Sukha<span className="text-purple-500 text-2xl">ranjan</span>
-              <p className="text-sm">Full stack developer</p>
-            </h1>
+            <h2 className="text-xl text-slate-700">Sukharanjan</h2>
           </div>
-          {/*Desktop navbar */}
-          <div>
-            <ul className="hidden md:flex space-x-8">
-              {navItems.map(({ id, text }) => (
+          {/* Desktop navbar */}
+          <div className="hidden md:flex">
+            <ul className="flex space-x-8">
+              {navItems.map(({ id, text, icon }) => (
                 <li
-                  className="hover:scale-105 duration-200 cursor-pointer"
+                  className="flex items-center hover:scale-105 duration-200 cursor-pointer gap-x-2"
                   key={id}
                 >
                   <Link
+                    className="flex items-center"
                     to={text}
                     smooth={true}
                     duration={500}
                     offset={-70}
                     activeClass="active"
                   >
-                    {text}
+                    {icon}
+                    <span className="ml-2">{text}</span>
                   </Link>
                 </li>
               ))}
             </ul>
+          </div>
 
-            <div onClick={() => setMenu(!menu)} className="md:hidden">
-              {!menu ? <IoMenu size={24} /> : <ImCross size={20} />}
-            </div>
+          <div onClick={() => setMenu(!menu)} className="md:hidden">
+            {!menu ? <IoMenu size={24} /> : <ImCross size={20} />}
           </div>
         </div>
-        {/* mobile navbar */}
+        {/* Mobile navbar */}
         {menu && (
-          <div className="bg-white">
+          <div className="bg-white overflow-hidden">
             <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-3 text-xl">
-              {navItems.map(({ id, text }) => (
+              {navItems.map(({ id, text, icon }) => (
                 <li
-                  className="hover:scale-105 duration-200 font-semibold cursor-pointer"
+                  className="flex items-center hover:scale-105 duration-200 font-semibold cursor-pointer"
                   key={id}
                 >
                   <Link
@@ -82,8 +66,10 @@ const Navbar = () => {
                     duration={500}
                     offset={-70}
                     activeClass="active"
+                    className="flex items-center"
                   >
-                    {text}
+                    {icon}
+                    <span className="ml-2">{text}</span>
                   </Link>
                 </li>
               ))}
