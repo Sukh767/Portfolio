@@ -8,7 +8,6 @@ const About = () => {
   return (
     <div>
       {/*<div name="About" className=" mx-auto px-4 md:px-20 my-16">
-      <div>
       <h1 className="text-3xl font-bold mb-5">About</h1
         Hello, I'm Sukharanjan, a web developer with a keen eye for MERN Stack .
         with a background in IY, strive to create impactful and visually
