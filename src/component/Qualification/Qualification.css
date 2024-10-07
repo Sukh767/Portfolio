@@ -1,0 +1,73 @@
+/* Centering and styling the qualification section */
+.section {
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  
+  .section__subtitle {
+    margin-bottom: 0.5rem;
+  }
+  
+  .qualification__container {
+    max-width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .qualification__tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .qualification__button {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .qualification__button:hover,
+  .qualification__active {
+    color: #007BFF;
+  }
+  
+  .qualification__sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .qualification__data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .qualification__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  
+  .qualification__subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .qualification__calendar {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.3rem;
+  }
+  

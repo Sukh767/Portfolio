@@ -8,6 +8,7 @@ import PortFolio from "./component/PortFolio"
 import { Toaster } from 'react-hot-toast';
 import "./App.css"
 import Skills from "./component/Skills/Skills"
+import Qualification from "./component/Qualification/Qualification"
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
     <About/>
     <PortFolio/>
     <Skills/>
+    <Qualification />
     <Experience/>
     <Contact/>
     <Footer/>
