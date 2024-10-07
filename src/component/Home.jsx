@@ -37,7 +37,7 @@ const Home = () => {
               <div className="space-y-2">
                 <h1 className="font-bold text-center">Available on</h1>
                 <ul className="flex space-x-5 justify-center">
-                  <li>
+                  <li className="hover:text-indigo-600">
                     <a
                       href="https://www.instagram.com/sukh_jana/"
                       target="_blank"
@@ -46,7 +46,7 @@ const Home = () => {
                       <PiInstagramLogoFill className="text-3xl cursor-pointer" />
                     </a>
                   </li>
-                  <li>
+                  <li className="hover:text-indigo-600">
                     <a
                       href="https://www.linkedin.com/in/sukharanjan-jana-402b42255"
                       target="_blank"
@@ -55,12 +55,12 @@ const Home = () => {
                       <FaLinkedin className="text-3xl cursor-pointer" />
                     </a>
                   </li>
-                  <li>
+                  <li className="hover:text-indigo-600">
                     <a href="https://github.com/Sukh767" target="_blank" rel="noopener noreferrer">
                       <FaGithub className="text-3xl cursor-pointer" />
                     </a>
                   </li>
-                  <li>
+                  <li className="hover:text-indigo-600">
                     <a href="http://t.me/" target="_blank" rel="noopener noreferrer">
                       <FaTelegram className="text-3xl cursor-pointer" />
                     </a>
@@ -71,10 +71,10 @@ const Home = () => {
               <div className="space-y-2">
                 <h1 className="font-bold">Currently working on</h1>
                 <ul className="flex space-x-5 justify-center">
-                  <FaNodeJs className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer" />
-                  <FaReact className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer" />
-                  <SiExpress className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer" />
-                  <SiMongodb className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer" />
+                  <FaNodeJs className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer hover:text-indigo-600" />
+                  <FaReact className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer hover:text-indigo-600" />
+                  <SiExpress className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer hover:text-indigo-600" />
+                  <SiMongodb className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer hover:text-indigo-600" />
                 </ul>
               </div>
             </div>

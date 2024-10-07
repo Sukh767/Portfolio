@@ -1,0 +1,9 @@
+.navcard__mobile {
+    transition: all 0.3s ease-in-out;
+    z-index: 50;
+  }
+  
+  .navcard__mobile ul {
+    width: 100%;
+  }
+  

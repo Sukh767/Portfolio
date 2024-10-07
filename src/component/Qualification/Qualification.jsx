@@ -49,9 +49,9 @@ const Qualification = () => {
 
               <div className="qualification__data">
                 <h3 className="qualification__title">Bachelor's Degree</h3>
-                <span className="qualification__subtitle">Information Technology</span>
+                <span className="qualification__subtitle">kalinga Institute Of Industrial Technology</span>
                 <div className="qualification__calendar">
-                  <i className="uil uil-calendar-alt">2021 - Passout</i>
+                  <i className="uil uil-calendar-alt">2025 - Passout</i>
                 </div>
               </div>
             </div>

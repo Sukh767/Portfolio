@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import profile from "../assets/profile2.jpg";
 import { IoMenu } from "react-icons/io5";
 import { ImCross } from "react-icons/im";
 import { Link } from "react-scroll";
 import { UilEstate, UilUser, UilImage, UilMessage, UilFileAlt } from '@iconscout/react-unicons';
+import './Navbar.css'
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -31,7 +31,7 @@ const Navbar = () => {
                   key={id}
                 >
                   <Link
-                    className="flex items-center"
+                    className="flex items-center hover:text-indigo-600"
                     to={text}
                     smooth={true}
                     duration={500}
@@ -52,8 +52,8 @@ const Navbar = () => {
         </div>
         {/* Mobile navbar */}
         {menu && (
-          <div className="bg-white overflow-hidden">
-            <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-3 text-xl">
+          <div className="bg-white absolute right-4 top-16 w-60 rounded-lg shadow-lg navcard__mobile">
+            <ul className="flex flex-col items-start p-4 space-y-3 text-xl">
               {navItems.map(({ id, text, icon }) => (
                 <li
                   className="flex items-center hover:scale-105 duration-200 font-semibold cursor-pointer"
@@ -66,7 +66,7 @@ const Navbar = () => {
                     duration={500}
                     offset={-70}
                     activeClass="active"
-                    className="flex items-center"
+                    className="flex items-center "
                   >
                     {icon}
                     <span className="ml-2">{text}</span>
