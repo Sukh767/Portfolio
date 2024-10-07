@@ -1,10 +1,4 @@
 import React from "react";
-import java from "../assets/java.png";
-import python from "../assets/python.webp";
-import mongoDB from "../assets/mongodb.jpg";
-import express from "../assets/express.png";
-import reactjs from "../assets/reactjs.png";
-import nodejs from "../assets/node.png";
 import "./PortFolio.css";
 
 const PortFolio = () => {
@@ -17,11 +11,11 @@ const PortFolio = () => {
       <div class="ag-format-container">
         <div class="ag-courses_box">
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="https://github.com/Sukh767/Crop_yield_prediction.git" target="_blank" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
 
               <div class="ag-courses-item_title">
-                UI/Web&amp;Graph design for teenagers 11-17&#160;years old
+              Crop Yield Prediction&#160; ML &amp; Python 
               </div>
 
               <div class="ag-courses-item_date-box">
@@ -33,11 +27,11 @@ const PortFolio = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="https://github.com/Sukh767/Spotify-Clone.git" target="_blank" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
 
               <div class="ag-courses-item_title">
-                UX/UI Web-Design&#160;+ Mobile Design
+                UX/UI Spotify Clone HTML-CSS
               </div>
 
               <div class="ag-courses-item_date-box">
@@ -49,11 +43,11 @@ const PortFolio = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="https://github.com/Sukh767/Youtube-clone.git" target="_blank" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
 
               <div class="ag-courses-item_title">
-                Annual package "Product+UX/UI+Graph designer&#160;2022"
+                Youtube Clone HTML CSS &amp; JS
               </div>
 
               <div class="ag-courses-item_date-box">
@@ -65,13 +59,15 @@ const PortFolio = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="https://github.com/Sukh767/E-Commerce-sites.git" target="_blank" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
 
-              <div class="ag-courses-item_title">Graphic Design</div>
+              <div class="ag-courses-item_title">
+                E-Commerce website
+              </div>
 
               <div class="ag-courses-item_date-box">
-                <button className="bg-purple-500 hover:bg-green-600 text-black font-bold px-4 py-2 rounded">
+                <button className="bg-sky-500 hover:bg-green-600 text-black font-bold px-4 py-2 rounded">
                   Source code
                 </button>
               </div>
@@ -79,10 +75,12 @@ const PortFolio = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="https://github.com/Sukh767/Plagiarism-Checker-in-Python.git" target="_blank" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
 
-              <div class="ag-courses-item_title">Motion Design</div>
+              <div class="ag-courses-item_title">plagiarism Checker 
+                Pyhthon
+              </div>
 
               <div class="ag-courses-item_date-box">
                 <button className="bg-pink-500 hover:bg-green-600 text-black font-bold px-4 py-2 rounded">
@@ -93,11 +91,11 @@ const PortFolio = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="https://github.com/Sukh767/Music-Player-in-Python.git" target="_blank" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
 
               <div class="ag-courses-item_title">
-                Front-end development&#160;+ jQuery&#160;+ CMS
+                Music Player &nbsp;Python
               </div>
               <div class="ag-courses-item_date-box">
                 <button className="bg-indigo-500 hover:bg-green-600 text-black font-bold px-4 py-2 rounded">
@@ -108,9 +106,11 @@ const PortFolio = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="https://github.com/Sukh767/Sukh767.github.io.git" target="_blank" class="ag-courses-item_link">
               <div class="ag-courses-item_bg_k"></div>
-              <div class="ag-courses-item_title">Digital Marketing</div>
+              <div class="ag-courses-item_title">Pdf Splitter 
+                <br/>Java
+              </div>
               <div class="ag-courses-item_date-box">
                 <button className="bg-teal-500 hover:bg-green-600 text-black font-bold px-4 py-2 rounded">
                   Source code
@@ -120,13 +120,15 @@ const PortFolio = () => {
           </div>
 
           <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
+            <a href="https://github.com/Sukh767/Todo_Application.git" target="_blank" class="ag-courses-item_link">
               <div class="ag-courses-item_bg"></div>
 
-              <div class="ag-courses-item_title">Interior Design</div>
+              <div class="ag-courses-item_title">Todo Application
+                &nbsp;React
+              </div>
 
               <div class="ag-courses-item_date-box">
-                <button className="bg-yellow-500 hover:bg-green-600 text-black font-bold px-4 py-2 rounded">
+                <button className="bg-slate-500 hover:bg-green-600 text-black font-bold px-4 py-2 rounded">
                   Source code
                 </button>
               </div>
