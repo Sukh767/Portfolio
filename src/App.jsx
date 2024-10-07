@@ -9,6 +9,7 @@ import { Toaster } from 'react-hot-toast';
 import "./App.css"
 import Skills from "./component/Skills/Skills"
 import Qualification from "./component/Qualification/Qualification"
+import ScrollUp from "./component/scrollup/ScrollUp"
 
 const App = () => {
   return (
@@ -17,12 +18,13 @@ const App = () => {
     <Navbar/>
     <Home/>
     <About/>
-    <PortFolio/>
     <Skills/>
     <Qualification />
     <Experience/>
+    <PortFolio/>
     <Contact/>
     <Footer/>
+    <ScrollUp />
     </div>
     <Toaster />
     </>

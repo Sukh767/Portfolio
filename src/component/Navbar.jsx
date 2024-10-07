@@ -10,8 +10,8 @@ const Navbar = () => {
   const navItems = [
     { id: 1, text: "Home", icon: <UilEstate size={24} /> },
     { id: 2, text: "About", icon: <UilUser size={24} /> },
-    { id: 3, text: "Portfolio", icon: <UilImage size={24} /> },
     { id: 4, text: "Skills", icon: <UilFileAlt size={24} /> },
+    { id: 3, text: "Portfolio", icon: <UilImage size={24} /> },
     { id: 5, text: "Contacts", icon: <UilMessage size={24} /> },
   ];
 

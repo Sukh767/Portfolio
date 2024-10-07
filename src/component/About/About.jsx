@@ -7,17 +7,11 @@ import Info from "./Info";
 const About = () => {
   return (
     <div>
-      {/*<div name="About" className=" mx-auto px-4 md:px-20 my-16">
-      <h1 className="text-3xl font-bold mb-5">About</h1
-        Hello, I'm Sukharanjan, a web developer with a keen eye for MERN Stack .
-        with a background in IY, strive to create impactful and visually
-        stunning software solution that leave a lasting impression.
-    </div>*/}
       <section name="About" className="about section" id="about">
         <h2 className="section__title">About me</h2>
         <span className="section__subtitle">My introduction</span>
-        <div className="about__container container grid">
-          <img src={AboutImg} alt="" className="about__img" />
+        <div className="about__container container">
+          <img src={AboutImg} alt="About Me" className="about__img" />
 
           <div className="about__data">
             <Info />
@@ -32,7 +26,7 @@ const About = () => {
             <a download="" href={CV} className="button button--flex">
               Download CV
               <svg
-                class="button__icon"
+                className="button__icon"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"

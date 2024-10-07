@@ -41,7 +41,7 @@ const PortFolio = () => {
       ];
   return (
     <div
-      name="PortFolio"
+      name="Portfolio"
       className="mx-auto px-4 md:px-20 mt-10"
     >
       <div>
