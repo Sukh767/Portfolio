@@ -1,60 +1,102 @@
-import React from "react";
-import "./About.css";
+import React, { useState } from "react";
 import AboutImg from "../../assets/image.webp";
 import CV from "../../assets/Resume-Sukharanjan-Jana-Update-1.pdf";
 import Info from "./Info";
+import { motion } from "framer-motion";
 
 const About = () => {
-  return (
-    <div>
-      <section name="About" className="about section" id="about">
-        <h2 className="section__title">About me</h2>
-        <span className="section__subtitle">My introduction</span>
-        <div className="about__container container">
-          <img src={AboutImg} alt="About Me" className="about__img" />
+  const [isDownloading, setIsDownloading] = useState(false);
 
-          <div className="about__data">
+  const handleDownload = () => {
+    setIsDownloading(true);
+    setTimeout(() => {
+      setIsDownloading(false);
+    }, 2000); // Simulating download time
+  };
+
+  return (
+    <section name="About" className="py-20 bg-gradient-to-b from-gray-50 to-gray-100">
+      <div className="container mx-auto px-4">
+        <motion.h2 
+          className="text-3xl font-bold text-center text-gray-800 mb-2"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          About me
+        </motion.h2>
+        <motion.span 
+          className="block text-center text-gray-600 mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          My introduction
+        </motion.span>
+
+        <div className="flex flex-col lg:flex-row items-center justify-between">
+          <motion.div 
+            className="lg:w-2/5 mb-8 lg:mb-0"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-blue-200 rounded-full filter blur-xl opacity-70 animate-pulse"></div>
+              <img src={AboutImg} alt="About Me" className="rounded-full shadow-xl max-w-full h-auto relative z-10" />
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="lg:w-1/2 lg:pl-12"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             <Info />
 
-            <p className="about__description">
-              I’m a dedicated B.Tech student and full-stack web developer with a
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              I'm a dedicated B.Tech student and full-stack web developer with a
               keen interest in both frontend and backend technologies. My
               passion for coding drives me to work hard and strive for
               excellence in every project, ensuring that I deliver impactful and
               user-centric web applications.
             </p>
-            <a download="" href={CV} className="button button--flex">
-              Download CV
-              <svg
-                className="button__icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M15.25 22.7502H9.25C3.82 22.7502 1.5 20.4302 1.5 15.0002V9.00024C1.5 3.57024 3.82 1.25024 9.25 1.25024H14.25C14.66 1.25024 15 1.59024 15 2.00024C15 2.41024 14.66 2.75024 14.25 2.75024H9.25C4.64 2.75024 3 4.39024 3 9.00024V15.0002C3 19.6102 4.64 21.2502 9.25 21.2502H15.25C19.86 21.2502 21.5 19.6102 21.5 15.0002V10.0002C21.5 9.59024 21.84 9.25024 22.25 9.25024C22.66 9.25024 23 9.59024 23 10.0002V15.0002C23 20.4302 20.68 22.7502 15.25 22.7502Z"
-                  fill="var(--container-color)"
-                ></path>
-                <path
-                  d="M22.25 10.7502H18.25C14.83 10.7502 13.5 9.42023 13.5 6.00023V2.00023C13.5 1.70023 13.68 1.42023 13.96 1.31023C14.24 1.19023 14.56 1.26023 14.78 1.47023L22.78 9.47023C22.99 9.68023 23.06 10.0102 22.94 10.2902C22.82 10.5702 22.55 10.7502 22.25 10.7502ZM15 3.81023V6.00023C15 8.58023 15.67 9.25023 18.25 9.25023H20.44L15 3.81023Z"
-                  fill="var(--container-color)"
-                ></path>
-                <path
-                  d="M13.25 13.7502H7.25C6.84 13.7502 6.5 13.4102 6.5 13.0002C6.5 12.5902 6.84 12.2502 7.25 12.2502H13.25C13.66 12.2502 14 12.5902 14 13.0002C14 13.4102 13.66 13.7502 13.25 13.7502Z"
-                  fill="var(--container-color)"
-                ></path>
-                <path
-                  d="M11.25 17.7502H7.25C6.84 17.7502 6.5 17.4102 6.5 17.0002C6.5 16.5902 6.84 16.2502 7.25 16.2502H11.25C11.66 16.2502 12 16.5902 12 17.0002C12 17.4102 11.66 17.7502 11.25 17.7502Z"
-                  fill="var(--container-color)"
-                ></path>
-              </svg>
-            </a>
-          </div>
+
+            <motion.a 
+              href={CV} 
+              download 
+              onClick={handleDownload}
+              className={`inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 ${isDownloading ? 'cursor-not-allowed opacity-75' : ''}`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {isDownloading ? (
+                <>
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Downloading...
+                </>
+              ) : (
+                <>
+                  Download CV
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L11 12.586V5a1 1 0 112 0v7.586l3.293-3.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </>
+              )}
+            </motion.a>
+          </motion.div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

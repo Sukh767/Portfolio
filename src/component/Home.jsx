@@ -7,90 +7,81 @@ import image from "../assets/image.webp";
 
 const Home = () => {
   return (
-    <>
-      <div name="Home" className="mx-auto px-4 md:px-20 my-20">
-        <div className="flex flex-col md:flex-row">
+    <div name="Home" className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between mt-20">
           {/* Text Section */}
-          <div className="md:w-1/2 mt-12 md:mt-24 space-y-2 order-2 md:order-1">
-            <span className="text-xl">Welcome In My Feed</span>
-            <div className="flex space-x-2 text-2xl md:text-4xl">
-              <h1>Hello, I'm </h1>
+          <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
+            <h2 className="text-2xl font-semibold text-gray-600">Welcome to My Portfolio</h2>
+            <div className="text-4xl sm:text-5xl font-bold text-gray-900">
+              <h1>Hello, I'm a</h1>
               <ReactTyped
-                className="text-red-600 font-bold"
+                className="text-blue-600"
                 strings={[" Developer", " Programmer", " Coder"]}
                 typeSpeed={40}
                 backSpeed={50}
                 loop={true}
               />
             </div>
-            <br />
-            <p className="text-sm md:text-md text-justify">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto lg:mx-0">
               I'm a full-stack web developer and B.Tech student with a strong
               passion for both backend and frontend development. Driven by a
-              love for coding, I’m dedicated to creating seamless, user-friendly
+              love for coding, I'm dedicated to creating seamless, user-friendly
               applications while continuously honing my skills through hard work
               and determination.
             </p>
-            <br />
-            {/* Social Media Icons */}
-            <div className="flex flex-col items-center md:flex-row justify-between space-y-6 md:space-y-0">
-              <div className="space-y-2">
-                <h1 className="font-bold text-center">Available on</h1>
-                <ul className="flex space-x-5 justify-center">
-                  <li className="hover:text-indigo-600">
-                    <a
-                      href="https://www.instagram.com/sukh_jana/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <PiInstagramLogoFill className="text-3xl cursor-pointer" />
-                    </a>
-                  </li>
-                  <li className="hover:text-indigo-600">
-                    <a
-                      href="https://www.linkedin.com/in/sukharanjan-jana-402b42255"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaLinkedin className="text-3xl cursor-pointer" />
-                    </a>
-                  </li>
-                  <li className="hover:text-indigo-600">
-                    <a href="https://github.com/Sukh767" target="_blank" rel="noopener noreferrer">
-                      <FaGithub className="text-3xl cursor-pointer" />
-                    </a>
-                  </li>
-                  <li className="hover:text-indigo-600">
-                    <a href="http://t.me/" target="_blank" rel="noopener noreferrer">
-                      <FaTelegram className="text-3xl cursor-pointer" />
-                    </a>
-                  </li>
+            
+            {/* Social Media and Skills */}
+            <div className="flex flex-col sm:flex-row justify-between items-center space-y-6 sm:space-y-0 sm:space-x-4">
+              <div className="space-y-4">
+                <h3 className="font-bold text-gray-800">Connect with me</h3>
+                <ul className="flex space-x-4">
+                  {[
+                    { icon: PiInstagramLogoFill, href: "https://www.instagram.com/sukh_jana/", color: "hover:text-pink-600" },
+                    { icon: FaLinkedin, href: "https://www.linkedin.com/in/sukharanjan-jana-402b42255", color: "hover:text-blue-700" },
+                    { icon: FaGithub, href: "https://github.com/Sukh767", color: "hover:text-gray-900" },
+                    { icon: FaTelegram, href: "http://t.me/", color: "hover:text-blue-500" },
+                  ].map((item, index) => (
+                    <li key={index} className={`transition-colors duration-300 ${item.color}`}>
+                      <a href={item.href} target="_blank" rel="noopener noreferrer">
+                        <item.icon className="text-3xl" />
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              {/* Skills Icons */}
-              <div className="space-y-2">
-                <h1 className="font-bold">Currently working on</h1>
-                <ul className="flex space-x-5 justify-center">
-                  <FaNodeJs className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer hover:text-indigo-600" />
-                  <FaReact className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer hover:text-indigo-600" />
-                  <SiExpress className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer hover:text-indigo-600" />
-                  <SiMongodb className="text-xl md:text-3xl hover:scale-110 duration-200 cursor-pointer hover:text-indigo-600" />
+              <div className="space-y-4">
+                <h3 className="font-bold text-gray-800">Currently working on</h3>
+                <ul className="flex space-x-4">
+                  {[
+                    { icon: FaNodeJs, color: "text-green-600" },
+                    { icon: FaReact, color: "text-blue-400" },
+                    { icon: SiExpress, color: "text-gray-600" },
+                    { icon: SiMongodb, color: "text-green-500" },
+                  ].map((item, index) => (
+                    <li key={index}>
+                      <item.icon className={`text-3xl transition-transform duration-300 hover:scale-110 ${item.color}`} />
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
+          
           {/* Image Section */}
-          <div className="md:w-1/2 md:ml-48 mt-20 order-1">
-            <img
-              src={image}
-              alt=""
-              className="w-full md:rounded-full md:w-[450px] md:h-[450px] object-cover"
-            />
+          <div className="lg:w-1/2 mt-12 lg:mt-0">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+              <img
+                src={image}
+                alt="Profile"
+                className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover mx-auto shadow-2xl ring-4 ring-white"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <hr className="border-1" />
-    </>
+    </div>
   );
 };
 

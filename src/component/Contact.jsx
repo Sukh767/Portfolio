@@ -1,95 +1,90 @@
-import axios from "axios";
 import React from "react";
-import { useForm} from "react-hook-form"
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-
-
+import axios from "axios";
 
 const Contact = () => {
-    const {
-      register,
-      handleSubmit,
-      formState: { errors },
-    } = useForm()
-    const onSubmit = async (data) => {
-      const userDetails = {
-        name : data.name,
-        email : data.email,
-        message : data.message
-      }
-      try{
-          await axios.post("https://getform.io/f/ajjezvea",userDetails);
-          toast.success("Your message has been sent");
-      }catch{
-        console.log(err);
-        toast.error("Something went wrong");
-      }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    try {
+      await axios.post("https://getform.io/f/ajjezvea", data);
+      toast.success("Your message has been sent");
+      reset();
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong");
     }
+  };
 
   return (
-    <>
-      <div
-        name="Contacts"
-        className="mx-auto px-4 md:px-20 my-16"
-      >
-        <h1 className="text-3xl font-bold mb-4">Contact me</h1>
-        <span>Please fill out the form below to contact me</span>
-        <div className="flex flex-col items-center justify-center mt-5">
-          <form 
-          // action="https://getform.io/f/ajjezvea" 
-          // method="POST"
-          className="bg-slate-300 w-96 px-8 py-6 rounded-xl"
+    <section name="Contacts" className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8">Contact Me</h2>
+        <p className="text-xl text-gray-600 text-center mb-12">Please fill out the form below to get in touch</p>
+        
+        <form 
           onSubmit={handleSubmit(onSubmit)}
-          >
-            <h1 className="text-xl font-semibold mb-4">Send Your Message</h1>
-            <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">FullName</label>
-              <input
-                className="shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                {...register("name", { required: true })} 
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Enter your fullname"
-
-              />
-              {errors.name && <span>This field is required</span>}
-            </div>
-            <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">Enter your email</label>
-              <input
-                className="shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                {...register("email", { required: true })} 
-                id="name"
-                name="email"
-                type="text"
-                placeholder="abc@gmail.com"
-
-              />
-              {errors.email && <span>This field is required</span>}
-            </div>
-            <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">Message</label>
-              <textarea
-                className="shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="name"
-                name="message"
-                type="text"
-                placeholder="Drop your message"
-                {...register("message", { required: true })} 
-              />
-              {errors.message && <span>This field is required</span>}
-            </div>
+          className="bg-white shadow-2xl rounded-lg p-8"
+        >
+          <div className="mb-6">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+            <input
+              {...register("name", { required: "Name is required" })}
+              type="text"
+              id="name"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="John Doe"
+            />
+            {errors.name && <p className="mt-2 text-sm text-red-600">{errors.name.message}</p>}
+          </div>
+          
+          <div className="mb-6">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+            <input
+              {...register("email", { 
+                required: "Email is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Invalid email address"
+                }
+              })}
+              type="email"
+              id="email"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="john@example.com"
+            />
+            {errors.email && <p className="mt-2 text-sm text-red-600">{errors.email.message}</p>}
+          </div>
+          
+          <div className="mb-6">
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+            <textarea
+              {...register("message", { required: "Message is required" })}
+              id="message"
+              rows="4"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Your message here..."
+            ></textarea>
+            {errors.message && <p className="mt-2 text-sm text-red-600">{errors.message.message}</p>}
+          </div>
+          
+          <div>
             <button
               type="submit"
-              className="bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-300"
+              className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300"
             >
-              Send
+              Send Message
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-    </>
+    </section>
   );
 };
 
