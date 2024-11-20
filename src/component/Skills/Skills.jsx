@@ -12,15 +12,9 @@ const SkillCategory = ({ title, skills, icon: Icon }) => (
         <div key={index} className="flex items-center p-2 rounded-md transition-all duration-300 hover:bg-blue-100 group">
           <skill.icon className="w-5 h-5 mr-2 text-gray-500 group-hover:text-blue-500" />
           <span className="group-hover:font-medium">{skill.name}</span>
-          <div className="ml-auto flex items-center">
-            <div className="w-16 bg-gray-200 rounded-full h-2 mr-2 overflow-hidden">
-              <div 
-                className="bg-blue-500 h-2 rounded-full transition-all duration-300 group-hover:w-full" 
-                style={{width: `${skill.level}%`}}
-              ></div>
-            </div>
-            <span className="text-xs text-gray-500 group-hover:text-blue-500">{skill.level}%</span>
-          </div>
+          <span className="ml-auto text-sm text-gray-500 group-hover:text-blue-500">
+            {skill.level}
+          </span>
         </div>
       ))}
     </div>
