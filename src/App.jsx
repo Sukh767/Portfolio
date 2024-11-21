@@ -10,6 +10,7 @@ import "./App.css"
 import Skills from "./component/Skills/Skills"
 import Qualification from "./component/Qualification/Qualification"
 import ScrollUp from "./component/scrollup/ScrollUp"
+import ProjectShowcase from "./component/ProjectShowcase"
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
     <Skills/>
     <Qualification />
     <PortFolio/>
+    <ProjectShowcase/>
     <Contact/>
     <Footer/>
     <ScrollUp />
