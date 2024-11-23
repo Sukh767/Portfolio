@@ -26,6 +26,9 @@ const projects = [
       assets.ecommerce1,
       assets.ecommerce2,
       assets.ecommerce3,
+      assets.ecommerce4,
+      assets.ecommerce5,
+      assets.ecommerce6
     ],
     siteUrl: "https://electromart-72lq.onrender.com",
   },
