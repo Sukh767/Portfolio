@@ -5,9 +5,9 @@ const projects = [
   {
     id: 1,
     title: "Crop Yield Prediction",
-    description: "This machine learning project leverages Python to predict crop yields based on environmental and soil parameters. It uses data preprocessing and regression models to provide insights for farmers and policymakers.",
-    technologies: ["Python", "Machine Learning"],
-    type: "ml",
+    description: "This Python project leverages Python to predict crop yields based on environmental and soil parameters. It uses data preprocessing and regression models to provide insights for farmers and policymakers.",
+    technologies: ["Python", "Python"],
+    type: "Python",
     sourceCode: "https://github.com/Sukh767/Crop_yield_prediction.git"
   },
   {
@@ -48,7 +48,7 @@ const projects = [
     title: "Plagiarism Checker",
     description: "A Python-based tool that detects plagiarism in text files. It utilizes text similarity algorithms to highlight copied content and ensure originality.",
     technologies: ["Python"],
-    type: "ml",
+    type: "Python",
     sourceCode: "https://github.com/Sukh767/Plagiarism-Checker-in-Python.git"
   },
   {
@@ -56,7 +56,7 @@ const projects = [
     title: "Music Player",
     description: "A Python application for playing audio files, featuring an intuitive GUI and essential controls like play, pause, and stop.",
     technologies: ["Python"],
-    type: "other",
+    type: "Python",
     sourceCode: "https://github.com/Sukh767/Music-Player-in-Python.git"
   },
   {
@@ -104,7 +104,7 @@ const ProjectCard = ({ project }) => (
           href={project.sourceCode}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300"
+          className="flex items-center text-blue-600 hover:text-blue-800 hover:bg-indigo-300 hover:rounded-full transition-colors duration-300"
         >
           <Github className="w-5 h-5 mr-2" />
           Source Code
@@ -150,10 +150,10 @@ export default function Portfolio() {
             Web Development
           </button>
           <button
-            onClick={() => setFilter('ml')}
-            className={`px-4 py-2 rounded-full ${filter === 'ml' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'}`}
+            onClick={() => setFilter('Python')}
+            className={`px-4 py-2 rounded-full ${filter === 'Python' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'}`}
           >
-            Machine Learning
+            Python
           </button>
           <button
             onClick={() => setFilter('other')}
