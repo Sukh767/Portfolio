@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AboutImg from "../../assets/image.webp";
-import CV from "../../assets/Resume-Sukharanjan-Jana-Update-1.pdf";
+import CV from "../../assets/Sukharanjan-resume-update-3.pdf";
 import Info from "./Info";
 import { motion } from "framer-motion";
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { assets } from '../assets/assets';
 
@@ -6,7 +6,7 @@ const projects = [
   {
     id: 1,
     title: "Scan&Dine",
-    description: "Scan&Dine revolutionizes the dining experience by using QR codes for menu access and ordering. Built on the MERN stack, it streamlines restaurant operations and enhances customer satisfaction.",
+    description: "Scan&Dine is an innovative solution that transforms the dining experience through seamless QR code technology. Developed using the MERN stack, it allows customers to access menus, place orders, and book tables effortlessly. Designed to streamline restaurant operations and enhance customer satisfaction, Scan&Dine empowers restaurants to register on the platform and offer their services to users. With integrated PayPal payment functionality, it provides a secure and convenient way for customers to settle bills, making dining more efficient and enjoyable for everyone.",
     images: [
       assets.scan1,
       assets.scan2,
@@ -34,14 +34,17 @@ const projects = [
   },
   {
     id: 3,
-    title: "Social Pulse",
-    description: "An all-in-one dashboard for managing multiple social media accounts with analytics.",
+    title: "E-Commerce Admin Dashboard",
+    description: "An all-in-one dashboard for managing products, orders, and customers. Built with React and MongoDB. A responsive and user-friendly interface for managing an e-commerce store. Dynamically fetches data from the MongoDB database and displays it in a tabular format. Allows users to edit, and delete products, orders, and customers. Provides a seamless experience for managing an e-commerce store.",
     images: [
       assets.social1,
       assets.social2,
       assets.social3,
+      assets.social4,
+      assets.social5,
+      assets.social6
     ],
-    siteUrl: "https://socialpulse-demo.vercel.app",
+    siteUrl: "https://nexify-admin-dashoard.onrender.com/",
   },
 ];
 
@@ -61,74 +64,42 @@ const ProjectCard = ({ project, isActive, onClick }) => (
   </motion.div>
 );
 
-const ImageGallery = ({ images }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
+const ImageCarousel = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
-    <div className="grid grid-cols-2 gap-2">
-      {images.map((image, index) => (
-        <motion.div
-          key={index}
-          className="relative overflow-hidden cursor-pointer aspect-video"
-          whileHover={{ scale: 1.05 }}
-          onClick={() => setSelectedImage(index)}
-        >
-          <img
-            src={image}
-            alt={`Project demo ${index + 1}`}
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-      ))}
-
-      <AnimatePresence>
-        {selectedImage !== null && (
-          <motion.div
-            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedImage(null)}
-          >
-            <motion.img
-              src={images[selectedImage]}
-              alt="Fullscreen project demo"
-              className="max-w-[90%] max-h-[90%] object-contain"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-            />
-            <button
-              className="absolute top-4 right-4 text-white text-4xl"
-              onClick={() => setSelectedImage(null)}
-            >
-              &times;
-            </button>
-            {selectedImage > 0 && (
-              <button
-                className="absolute left-4 text-white text-6xl"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedImage((prev) => prev - 1);
-                }}
-              >
-                &#8249;
-              </button>
-            )}
-            {selectedImage < images.length - 1 && (
-              <button
-                className="absolute right-4 text-white text-6xl"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedImage((prev) => prev + 1);
-                }}
-              >
-                &#8250;
-              </button>
-            )}
-          </motion.div>
-        )}
+    <div className="relative w-full h-96 overflow-hidden">
+      <AnimatePresence initial={false}>
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt={`Project demo ${currentIndex + 1}`}
+          className="absolute top-0 left-0 w-full h-full object-contain"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        />
       </AnimatePresence>
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={`w-3 h-3 rounded-full ${
+              index === currentIndex ? 'bg-blue-600' : 'bg-gray-300'
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
@@ -169,8 +140,8 @@ const ProjectShowcase = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <div className="bg-white rounded-b-xl shadow-lg overflow-hidden">
-              <ImageGallery images={activeProject.images} />
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <ImageCarousel images={activeProject.images} />
               <div className="p-6 space-y-4">
                 <h3 className="text-2xl font-bold text-gray-800">{activeProject.title}</h3>
                 <p className="text-gray-600">{activeProject.description}</p>

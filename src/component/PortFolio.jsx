@@ -83,6 +83,15 @@ const projects = [
     type: "webdev",
     sourceCode: "https://github.com/Sukh767/scan-dine.git",
     liveDemo: "https://scan-and-dine.onrender.com"
+  },
+  {
+    id:11,
+    title: "E-Commerce Admin Dashboard",
+    description: "An admin dashboard for managing products, orders, and customers. Built with MERN,it provides a seamless experience for managing an e-commerce store.",
+    technologies: ["React", "Node.js", "Express", "MongoDB","Redux Toolkit"],
+    type: "webdev",
+    sourceCode: "https://github.com/Sukh767/nexify.git",
+    liveDemo: "https://nexify-admin-dashoard.onrender.com/"
   }
 ];
 
