@@ -11,12 +11,13 @@ import Skills from "./component/Skills/Skills"
 import Qualification from "./component/Qualification/Qualification"
 import ScrollUp from "./component/scrollup/ScrollUp"
 import ProjectShowcase from "./component/ProjectShowcase"
+import { DarkModeProvider } from "./context/DarkModeContext"
 
 const App = () => {
   return (
-    <>
+    <DarkModeProvider>
     <div>
-    <Navbar/>
+    {/* <Navbar/> */}
     <Home/>
     <About/>
     <Skills/>
@@ -28,7 +29,7 @@ const App = () => {
     <ScrollUp />
     </div>
     <Toaster />
-    </>
+    </DarkModeProvider>
   )
 }
 
