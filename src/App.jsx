@@ -19,7 +19,7 @@ const App = () => {
     <div>
     {/* <Navbar/> */}
     <Home/>
-    <About/>
+{/*     <About/> */}
     <Skills/>
     <Qualification />
     <PortFolio/>
