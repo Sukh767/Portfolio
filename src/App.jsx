@@ -12,6 +12,7 @@ import Qualification from "./component/Qualification/Qualification"
 import ScrollUp from "./component/scrollup/ScrollUp"
 import ProjectShowcase from "./component/ProjectShowcase"
 import { DarkModeProvider } from "./context/DarkModeContext"
+import Certifications from "./component/Certifications"
 
 const App = () => {
   return (
@@ -19,9 +20,10 @@ const App = () => {
     <div>
     {/* <Navbar/> */}
     <Home/>
-{/*     <About/> */}
+    <About/>
     <Skills/>
     <Qualification />
+    {/* <Certifications/> */}
     <PortFolio/>
     <ProjectShowcase/>
     <Contact/>

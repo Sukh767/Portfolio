@@ -157,13 +157,10 @@ const About = () => {
                 darkMode ? "text-gray-300" : "text-gray-700"
               }`}
             >
-              I'm a passionate full-stack developer with expertise in modern web
-              technologies. My journey combines academic excellence with
-              hands-on experience building scalable applications. I thrive on
-              solving complex problems and creating seamless user experiences.
+              I'm a passionate full-stack developer who has successfully completed 10+ projects demonstrating industry-level capabilities. Currently pursuing my degree (expected completion August/September 2024), I've built several comprehensive applications that showcase my ability to solve real-world problems through code. While I'm new to professional work environments, my project experience has given me valuable insights into development workflows and best practices.
             </p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
+            {/* <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
               {[
                 { value: "10+", label: "Projects Completed" },
                 { value: "2+", label: "Years Experience" },
@@ -194,7 +191,7 @@ const About = () => {
                   </p>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
 
             <motion.a
               href={CV}
